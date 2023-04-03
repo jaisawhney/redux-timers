@@ -19,7 +19,7 @@ export const timersSlice = createSlice({
     name: 'timers',
     initialState,
     reducers: {
-        addTime: (state, action) => {
+        addTimer: (state, action) => {
             state.value.push((new (timer as any)(action.payload)) as Timer);
         },
         toggleTimer: (state, action) => {
@@ -30,6 +30,6 @@ export const timersSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const {addTime, toggleTimer} = timersSlice.actions
+export const {addTimer, toggleTimer} = timersSlice.actions
 
 export default timersSlice.reducer

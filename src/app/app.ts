@@ -6,3 +6,6 @@ export const store = configureStore({
         timers: timersReducer
     }
 })
+
+// Export for TS Typings
+export type RootState = ReturnType<typeof store.getState>
