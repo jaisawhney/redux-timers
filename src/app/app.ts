@@ -1,6 +1,6 @@
 import {loadState, saveState} from '../utils/persistState'
-import {configureStore} from "@reduxjs/toolkit";
-import {updateTimer} from "../features/timers/timersSlice";
+import {configureStore} from '@reduxjs/toolkit';
+import {updateTimer} from '../features/timers/timersSlice';
 import timersReducer from '../features/timers/timersSlice';
 import throttle from 'lodash/throttle';
 

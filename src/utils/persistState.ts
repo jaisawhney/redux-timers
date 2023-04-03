@@ -1,6 +1,6 @@
-import {RootState} from "../app/app";
+import {RootState} from '../app/app';
 
-const TMRZ_STATE = "TMRZ_STATE"
+const TMRZ_STATE = 'TMRZ_STATE'
 
 // Load State
 export const loadState = () => {
@@ -25,6 +25,6 @@ export const saveState = (state: RootState) => {
         // save the state to local storage
         localStorage.setItem(TMRZ_STATE, serializedState)
     } catch(err) {
-        console.log("Error saving data")
+        console.log('Error saving data')
     }
 }

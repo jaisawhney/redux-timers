@@ -1,6 +1,6 @@
-import {useSelector} from "react-redux";
-import {RootState} from "../app/app";
-import TimerView from "./TimerView";
+import {useSelector} from 'react-redux';
+import {RootState} from '../app/app';
+import TimerView from './TimerView';
 
 export default function ListTimers() {
     const timers = useSelector((state: RootState) => state.timers.value);
