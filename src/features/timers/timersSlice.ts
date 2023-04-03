@@ -1,8 +1,9 @@
 import {createSlice} from '@reduxjs/toolkit'
-import timer from './Timer'
+import {createTimer} from '../../utils/createTimer';
 
 interface Timer {
     name: string;
+    description: string;
     time: number;
     isRunning: boolean;
 }
@@ -20,7 +21,12 @@ export const timersSlice = createSlice({
     initialState,
     reducers: {
         addTimer: (state, action) => {
-            state.value.push((new (timer as any)(action.payload)) as Timer);
+            const {name, description} = action.payload;
+            const timer = createTimer(name, description);
+            state.value.push(timer);
+        },
+        removeTimer: (state, action) => {
+            state.value.splice(action.payload, 1);
         },
         toggleTimer: (state, action) => {
             const timer = state.value[action.payload]
@@ -35,6 +41,6 @@ export const timersSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const {addTimer, toggleTimer, updateTimer} = timersSlice.actions
+export const {addTimer, toggleTimer, updateTimer, removeTimer} = timersSlice.actions
 
 export default timersSlice.reducer
