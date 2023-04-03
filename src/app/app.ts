@@ -1,5 +1,10 @@
-import { configureStore } from "@reduxjs/toolkit";
+import {configureStore} from "@reduxjs/toolkit";
+import {updateTimer} from "../features/timers/timersSlice";
 import timersReducer from '../features/timers/timersSlice'
+
+setInterval(() => {
+    store.dispatch(updateTimer(100));
+}, 100);
 
 export const store = configureStore({
     reducer: {

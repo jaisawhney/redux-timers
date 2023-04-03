@@ -1,5 +1,6 @@
 import {useDispatch} from "react-redux";
 import {toggleTimer} from "../features/timers/timersSlice";
+import formatTime from "../utils/formatTime";
 
 interface Props {
     timer: {
@@ -17,7 +18,7 @@ export default function TimerView(props: Props) {
     return (
         <div>
             <h1>{timer.name}</h1>
-            <p>{timer.time}</p>
+            <p>{formatTime(timer.time)}</p>
             <button
                 onClick={() => dispatch(toggleTimer(idx))}
             >
