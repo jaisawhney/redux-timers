@@ -1,4 +1,4 @@
-export default function (time: number) {
+export default function formatTime(time: number) {
     const milliseconds = Math.floor((time / 100) % 10);
     const seconds = Math.floor((time / 1000) % 60);
     const minutes = Math.floor(time / (1000 * 60) % 60);

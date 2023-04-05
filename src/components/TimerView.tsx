@@ -17,12 +17,14 @@ export default function TimerView(props: Props) {
     const dispatch = useDispatch();
 
     return (
-        <div className={'flex flex-col items-center my-4'}>
-            <h1 className={'text-lg font-bold'}>{timer.name}</h1>
-            <p className={'text-md'}>{timer.description}</p>
-            <p className={'text-md'}>{formatTime(timer.time)}</p>
+        <div className={'grid grid-cols-[auto,1fr,min-content] my-4 gap-5'}>
+            <div className={'break-all'}>
+                <h1 className={'text-lg font-bold'}>{timer.name}</h1>
+                <p className={'text-sm text-gray-600'}>{timer.description}</p>
+            </div>
 
-            <div className={'flex gap-2 text-sm'}>
+            <p className={'text-md justify-self-end self-center'}>{formatTime(timer.time)}</p>
+            <div className={'flex gap-2 items-center text-sm'}>
                 <button
                     className={'rounded-lg font-bold m-0 px-1.5 py-0.5 bg-black text-white'}
                     onClick={() => dispatch(toggleTimer(idx))}

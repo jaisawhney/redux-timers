@@ -5,9 +5,11 @@ import ListTimers from './components/ListTimers';
 
 function App() {
     return (
-        <div className="w-full flex flex-col items-center p-4">
-            <NewTimer/>
-            <ListTimers/>
+        <div className="flex justify-center p-5">
+            <div>
+                <NewTimer/>
+                <ListTimers/>
+            </div>
         </div>
     );
 }

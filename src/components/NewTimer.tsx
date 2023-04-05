@@ -13,7 +13,7 @@ export default function NewTimer() {
             <h1 className={'text-2xl'}>Redux Timers</h1>
             <div className={'flex justify-center pt-2'}>
                 <input
-                    className={'border rounded-s-lg m-0 px-2 py-0.5'}
+                    className={'border rounded-s-lg m-0 px-2 py-0.5 grow basis-0'}
                     type='text'
                     placeholder='New Timer Name'
                     name='name'
@@ -21,7 +21,7 @@ export default function NewTimer() {
                     onChange={(e) => setName(e.target.value)}
                 />
                 <input
-                    className={'border-y m-0 px-2 py-0.5'}
+                    className={'border-y m-0 px-2 py-0.5 grow basis-0'}
                     type='text'
                     placeholder='New Timer Description'
                     name='description'
